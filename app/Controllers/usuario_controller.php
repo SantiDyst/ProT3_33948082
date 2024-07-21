@@ -27,15 +27,18 @@ class usuario_controller extends Controller{
       'pass' => 'required|min_length[3]|max_length[10]'
     ],
   );
-  $formModel = new usuario_Model();
 
-  if (!$input){
+  $formModel = new usuario_Model();
+  if (!$input)
+  {
     $data['titulo']='Registro';
     echo view('front/head_view',$data);
     echo view('front/navbar_view');
     echo view('back/usuario/registro',['validation' => $this ->validator]);
     echo view('front/footer_view');
+
   } else {
+
     $formModel ->save ([
      'nombre' => $this ->request->getVar('nombre'),
       'apellido' => $this ->request->getVar('apellido'),
