@@ -1,0 +1,75 @@
+
+
+
+body{
+  background-color: rgba(184, 107, 219, 0.829)
+  ;
+  font-family: 'roboto',sans-serif;
+  color: antiquewhite;
+}
+
+
+
+
+/* mejora la imagenes del carousel*/
+  .carousel-item img {
+    max-height: 600px;
+    object-fit: cover;
+  }
+
+  
+
+    /*estilos iconos footer */
+    .social-icons{
+      height: 30px;
+      max-height: 30px;
+      width: auto;
+    /*   vertical-align: middle; */
+      margin-right: 20px;
+     }
+
+    
+     
+        /* Estilos personalizados para el formulario */
+      .card {
+        width: 500px; 
+        border: solid 2px blueviolet;
+        margin:20px;
+        padding:10px;
+
+      }
+
+      /* estilos footer*/
+
+      .footer-content{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0%;
+        padding-bottom: 0;
+        background-color: rgb(136, 77, 230);
+      }
+
+
+      /*estilos header*/
+      
+      .custom-header{
+        width: auto;
+        text-align: center;
+        background-color: rgb(136, 77, 230);
+        padding-bottom: 2px;
+        border: solid 2px rgb(43, 10, 73);
+
+      }
+
+      
+ 
+      
+
+
+
+      
+
+     
+    
+
