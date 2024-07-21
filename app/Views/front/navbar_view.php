@@ -8,7 +8,7 @@
 
 <nav class="navbar navbar-expand-lg " style="background-color:#C39BD3 ">
   <div class="container-fluid" style="border:solid 1px blueviolet" >
-      <a class="navbar-brand" href="<?php echo base_url('principal')?>">
+      <a class="navbar-brand" href="<?php echo base_url('/panel')?>">
       <!--                         logo principal              -->
       <img src="<?php echo base_url('assets/img/reloj-rosa.png')?>"  alt="marca" width="75" height="30" class="img-fluid">
       </a>
@@ -33,16 +33,6 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="quienes_somos">Quienes Somos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="acerca_de">Acerca de nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href= "<?php echo base_url('/registro'); ?>">Registrarse</a>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" href=<?php echo base_url('/login'); ?>>Login</a>
           </li>
 
@@ -51,32 +41,49 @@
           </li>
         </ul>
 
+      <!--                        cliente               -->
+
+      
         <?php elseif (session()->perfil_id == 2): ?>
           <div class="btn btn-secondary active btnUser btn-sm">
               <a href="">CLIENTE: <?php echo session ('nombre');?> </a>
           </div>
-
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="principal">Pincipal</a>
+          </li>
+          
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="quienes_somos">Quienes Somos</a>
           </li>
+
+          <li class="nav-item">  
+          <a class="nav-link" href="<?php echo base_url('/logout');?>"tabindex="-1"   aria-disabled="true">   Cerrar Sesion</a>
+          </li>
+        </ul>
+
           <li class="nav-item">
             <a class="nav-link" href=<?php echo base_url('/login'); ?>>Login</a>
           </li>
 
            <?php else:?>
+
+
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="quienes_somos">Quienes Somos</a>
+          </li>
+
             <li class="nav-item">
             <a class="nav-link" href="acerca_de">Acerca de nosotros</a>
           </li>
-          
 
           <li class="nav-item">
             <a class="nav-link" href= "<?php echo base_url('/registro'); ?>">Registrarse</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href=<?php echo base_url('/login'); ?>>Login</a>
           </li>
-
+          
 
 
     <div class="dropdown " >
