@@ -48,13 +48,13 @@ class usuario_controller extends Controller{
     ]);
 
     
-    session()-> setFlashdata('succes','Usuario registrado con exito! puede volver al Panel para ver los cambios');
+    session()-> setFlashdata('success','Usuario registrado con exito! puede volver al Panel para ver los cambios');
     return $this->response->redirect('registro');
-
+    
     
   }
 
   }
-
-
+  
+  
 }

@@ -16,6 +16,9 @@ $routes->get('login', 'Home::login');
 $routes->get('/registro','usuario_controller::create');
 $routes->post('/enviar-form','usuario_controller::formValidation');
 
+//editar usuarios
+/* $routes->get('/editar','usuario_controller::Edit'); */
+
 /*rutas del login*/ 
 $routes->get('/login','login_controller');
 /* $routes->get('/login', 'Login_controller::index'); */

@@ -26,7 +26,7 @@
                     <td><?php echo $usuario['email'] ?></td>
                     <td><?php echo $usuario['nombre'] ?></td>
                     <td><?php echo $usuario['apellido'] ?></td>
-                    
+                  <!-- //ver donde enviamos -->  <td><a href="<?=base_url('back/usuario/Edit')?>"> Editar </a></td>
                 </tr>
             <?php endforeach; ?>
        
