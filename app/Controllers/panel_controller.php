@@ -11,31 +11,33 @@ class Panel_controller extends Controller {
 
         $data['perfil_id'] = $perfil;
         $dato['titulo'] = 'Panel del Usuario'; 
+        
+        //probando metodo para tabla de usuarios
+        $model = new usuario_Model();
+        $usuarios = $model->getUsuarios();
 
+        //head y nav
         echo view('front/head_view', $dato); 
         echo view('front/navbar_view');
 
-        // Verificar el perfil_id para cargar vistas específicas
-        if ($perfil == 1) {
-            
-            // Vista para admin
-
+        // Vista Admin
+            if ($perfil == 1) {
+                
             echo view ('Back/usuario/usuario_logueado', $data);  
 
-          /*   echo view('Back/usuario/panel_admin', $data); */
-            
-        } elseif ($perfil == 2) {
-            // Vista para cliente
-            
-            $data['perfil_id']= $perfil;
+            echo view('Back/usuario/panel_admin', compact('usuarios')); 
 
-        $dato['titulo']='panel del usuario'; 
+         // Vista para cliente 
+            } elseif ($perfil == 2) {
+               
+                $data['perfil_id']= $perfil;
+
+                $dato['titulo']='panel del usuario'; 
+        
     
-   
-        echo view ('Back/usuario/usuario_logueado', $data); 
-    
-   
-        }
+                echo view ('Back/usuario/usuario_logueado', $data); 
+        
+            }
 
         echo view('front/footer_view');
     }

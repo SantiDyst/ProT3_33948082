@@ -1,35 +1,37 @@
-<h1>ESTAS EN PANEL DE CONTROL DE ADMIN</h1>
+<div class="container">
+  <div class="card">  
 
-<!-- Back/usuario/panel_admin.php -->
+  <div class="card-header">
+        <h1>Panel De Control Admin</h1>
+    </div>
+   <div class="card-body">
 
-<h1>Panel de Administración</h1>
-<h2>Usuarios Logueados</h2>
-
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Email</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if(!empty($usuarios)): ?>
+        <table class="table"> 
+            <h2>Usuarios Logueados</h2>
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                </tr>
+            </thead>
+        <tbody>
+            <!--  ?php if(!empty($usuarios)): ?> -->
             <?php foreach($usuarios as $usuario): ?>
                 <tr>
-                    <td><?= esc($usuario['perfil_id']); ?></td>
-                    <td><?= esc($usuario['usuario']); ?></td>
-                    <td><?= esc($usuario['email']); ?></td>
-                    <td><?= esc($usuario['nombre']); ?></td>
-                    <td><?= esc($usuario['apellido']); ?></td>
+                    <td><?php echo $usuario['nombre'] ?></td>
+                    <td><?php echo $usuario['apellido'] ?></td>
+                    <td><?php echo $usuario['usuario'] ?></td>
+                    <td><?php echo $usuario['email'] ?></td>
+                    <td><?php echo $usuario['perfil_id'] ?></td>
+                    
                 </tr>
             <?php endforeach; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="5">No hay usuarios logueados.</td>
-            </tr>
-        <?php endif; ?>
-    </tbody>
-</table>
+       
+        </tbody>
+        </table>
+    </div>
+
+</div>
