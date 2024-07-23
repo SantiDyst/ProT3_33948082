@@ -20,8 +20,8 @@
 
     <!--                               Admin                -->
     <?php if (session()->perfil_id == 1): ?>
-          <div class="btn btn-secondary active btnUser btn-sm">
-              <a href="">ADMIN: <?php echo session ('nombre');?> </a>
+          <div class="btn btn-secondary active btnUser btn-sm btn btn-danger">
+              <a href="<?php echo base_url('/panel'); ?>"style="color: white;">Panel Admin <?php echo session ('nombre');?> </a>
           </div> 
 
 

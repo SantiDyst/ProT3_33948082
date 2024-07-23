@@ -18,20 +18,23 @@
                 </tr>
             </thead>
         <tbody>
-            <!--  ?php if(!empty($usuarios)): ?> -->
+            
             <?php foreach($usuarios as $usuario): ?>
                 <tr>
-                    <td><?php echo $usuario['nombre'] ?></td>
-                    <td><?php echo $usuario['apellido'] ?></td>
+                    <td><?php echo $usuario['perfil_id'] ?></td>
                     <td><?php echo $usuario['usuario'] ?></td>
                     <td><?php echo $usuario['email'] ?></td>
-                    <td><?php echo $usuario['perfil_id'] ?></td>
+                    <td><?php echo $usuario['nombre'] ?></td>
+                    <td><?php echo $usuario['apellido'] ?></td>
                     
                 </tr>
             <?php endforeach; ?>
        
         </tbody>
         </table>
+        <button type="submit" class="btn btn-danger"> </button>
+        <a href="<?php echo base_url('registro'); ?>" class="btn btn-danger">Agregar</a>
+        <br><span> <a href="<?php echo base_url('registro'); ?>"></a></span>
     </div>
 
 </div>
