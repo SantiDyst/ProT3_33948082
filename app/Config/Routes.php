@@ -16,16 +16,24 @@ $routes->get('login', 'Home::login');
 $routes->get('/registro','usuario_controller::create');
 $routes->post('/enviar-form','usuario_controller::formValidation');
 
-//editar usuarios
-/* $routes->get('/editar','usuario_controller::Edit'); */
 
 /*rutas del login*/ 
 $routes->get('/login','login_controller');
 /* $routes->get('/login', 'Login_controller::index'); */
 $routes->post('/enviarlogin','login_controller::auth');
 $routes->get('/panel','Panel_controller::index',['filter' => 'auth']);
-
 $routes->get('/logout','login_controller::logout');
+
+
+//rutas para admin
+$routes->get('/admin', 'Admin::index');
+$routes->get('/admin/create', 'Admin::create');
+$routes->post('/admin/store', 'Admin::store');//cambiar por otra ruta luego
+$routes->get('/admin/edit/(:num)', 'Admin::edit');
+$routes->post('/admin/update/(:num)', 'Admin::update');
+$routes->post('/admin/delete/(:num)', 'Admin::delete');
+
+
 
 
 if (  is_file(APPPATH . 'config/'. ENVIRONMENT . 'Routes.php')){

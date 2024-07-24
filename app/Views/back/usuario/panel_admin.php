@@ -26,15 +26,27 @@
                     <td><?php echo $usuario['email'] ?></td>
                     <td><?php echo $usuario['nombre'] ?></td>
                     <td><?php echo $usuario['apellido'] ?></td>
-                  <!-- //ver donde enviamos -->  <td><a href="<?=base_url('back/usuario/Edit')?>"> Editar </a></td>
+                    <!-- <td><a href="?=base_url('admin/edit/'.$usuario['id_usuario'])?>"> Eliminar </a></td> -->
+                    
+                    <td><a href="/admin/edit/<?= $usuario['id_usuario'] ?>">Editar</a></td>
+                    <td><form action="/admin/delete/<?= $usuario['id_usuario'] ?>" method="post">
+                    <button type="submit">Eliminar</button></td>
+
+                
                 </tr>
             <?php endforeach; ?>
        
         </tbody>
         </table>
+
+
         <button type="submit" class="btn btn-danger"> </button>
         <a href="<?php echo base_url('registro'); ?>" class="btn btn-danger">Agregar</a>
         <br><span> <a href="<?php echo base_url('registro'); ?>"></a></span>
+
+
+                
+
     </div>
 
 </div>

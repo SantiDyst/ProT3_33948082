@@ -50,25 +50,6 @@ class Panel_controller extends Controller {
         echo view('front/footer_view');
     }
 
-
-        //Probando metodo para editar
-    /* public function edit($perfil_id) {
-        $model = new usuario_Model();
-        $dato = $model->getUser($perfil_id);
-
-        echo view('Front/head_view', $data);
-        echo view('Front/navbar_view');
-        echo view('Back/usuario/panel_Edit', compact('dato'));
-        echo view('Front/footer_view');
-    }
-     */
-
-
-
-
-
-
-
 } 
 
 

@@ -10,19 +10,13 @@ class usuario_Model extends Model {
     public function getUsuarios(){
         return $this-> findAll();
     }
-    
-
-
 
     //Probando modelo Editar
-    public function getUser($perfil_id) {
+    public function getUser($id_usuario) {
 
-    return $this->where ('perfil_id',$perfil_id)->first($perfil_id);
-
-
+    return $this->where('id_usuario',$id_usuario)->first($id_usuario);
     }
 
-    
 }
 
 
