@@ -8,14 +8,19 @@ class usuario_Model extends Model {
     protected $allowedFields = ['nombre', 'apellido', 'usuario', 'email', 'pass', 'perfil_id', 'baja', 'created_at'];
 
     public function getUsuarios(){
-        return $this-> findAll();
+        
+            return $this->where('baja', 'NO')->findAll();
+        }
+
+    
+
+    public function DarBaja($id_usuario) {
+        $data = ['baja' => 'SI'];
+
+        $this->update($id_usuario, $data);
     }
 
-    //Probando modelo Editar
-    public function getUser($id_usuario) {
 
-    return $this->where('id_usuario',$id_usuario)->first($id_usuario);
-    }
 
 }
 

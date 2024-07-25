@@ -5,6 +5,9 @@ use App\Models\usuario_Model;
 
 class Panel_controller extends Controller {
     public function index() {
+        $model = new Usuario_Model();
+        $data['usuarios'] = $model->where('baja', 'NO')->findAll();
+
         $session = session();
         $nombre = $session->get('usuario'); 
         $perfil = $session->get('perfil_id');
@@ -28,7 +31,7 @@ class Panel_controller extends Controller {
                 echo view ('Back/usuario/usuario_logueado', $data);  
 
                 echo view('Back/usuario/panel_admin', compact('usuarios')); 
-                /* echo view('Back/usuario/panel_Edit',compact('dato')); */
+               
 
 
 

@@ -47,10 +47,10 @@ class Admin extends Controller
         return redirect()->to('/admin');
     }
 
-    public function delete($id_usuario)
+   /*  public function delete($id_usuario)
     {
         $model = new usuario_Model();
         $model->delete($id_usuario);
         return redirect()->to('/admin');
-    }
+    } */
 }

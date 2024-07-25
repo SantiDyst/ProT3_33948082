@@ -94,14 +94,19 @@ class usuario_controller extends Controller{
         return redirect()->to('/panel');
     }
 
-    public function delete($id)
-    {
-        $model = new Usuario_Model();
+    public function EliminarUsuario($id_usuario) {
+      $modelo = new usuario_Model();
+  
+      $modelo->DarBaja($id_usuario);
+  
+      return $this->response->redirect(base_url('/panel'));
+    }
+       /*  $model = new Usuario_Model();
         $data = ['baja' => "SI"];
         $model->update($id, $data);
 
-        return redirect()->to('/panel');
-    }
+        return redirect()->to('/panel'); */
+    
 
     public function newUser()
     {
@@ -145,12 +150,7 @@ class usuario_controller extends Controller{
             return redirect()->to('/panel');
         }
     }
-    /* public function terminos()
-    {
-        echo view('front/terminos');
-    }
- */
-
+   
 
 
 

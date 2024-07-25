@@ -26,7 +26,8 @@ $routes->get('/logout','login_controller::logout');
 
 
 /* edit y eliminar */
-$routes->get('usuario/delete/(:num)', 'usuario_controller::delete/$1');
+$routes->get('/panel/eliminar/(:num)', 'usuario_controller::EliminarUsuario/$1');
+/* $routes->get('usuario/delete/(:num)', 'usuario_controller::delete/$1'); */
 $routes->get('usuario/edit/(:num)', 'usuario_controller::edit/$1');
 $routes->post('usuario/update/(:num)', 'usuario_controller::update/$1');
 

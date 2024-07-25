@@ -35,7 +35,7 @@ class Login_controller extends BaseController
             // Verificar si el usuario está dado de baja
             if ($ba == 'SI') {
                 $session->setFlashdata('msg', 'Usuario dado de baja');
-                return redirect()->to('/login_controller');
+                return redirect()->to('/login');
             }
 
             // Verificar la contraseña
