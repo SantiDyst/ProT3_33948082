@@ -47,5 +47,17 @@ class Home extends BaseController
         echo view('back/usuario/login');
         echo view('front/footer_view');
     }
+
+    public function edit()
+    {
+        $data['titulo']='edit';    
+        echo view('front/head_view',$data);
+        echo view('front/navbar_view');
+        echo view('back/usuario/edit_user');
+        echo view('front/footer_view');
+    }
+
+
+
     
 }

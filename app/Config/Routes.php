@@ -12,12 +12,12 @@ $routes->get('acerca_de', 'Home::acerca_de');
 $routes->get('registro', 'Home::registro');
 $routes->get('login', 'Home::login');
 
-/*rutas del Registro de Usuarios*/ 
+/* Registro de Usuarios*/ 
 $routes->get('/registro','usuario_controller::create');
 $routes->post('/enviar-form','usuario_controller::formValidation');
 
 
-/*rutas del login*/ 
+/* login*/ 
 $routes->get('/login','login_controller');
 /* $routes->get('/login', 'Login_controller::index'); */
 $routes->post('/enviarlogin','login_controller::auth');
@@ -25,13 +25,16 @@ $routes->get('/panel','Panel_controller::index',['filter' => 'auth']);
 $routes->get('/logout','login_controller::logout');
 
 
-//rutas para admin
-$routes->get('/admin', 'Admin::index');
-$routes->get('/admin/create', 'Admin::create');
-$routes->post('/admin/store', 'Admin::store');//cambiar por otra ruta luego
-$routes->get('/admin/edit/(:num)', 'Admin::edit');
-$routes->post('/admin/update/(:num)', 'Admin::update');
-$routes->post('/admin/delete/(:num)', 'Admin::delete');
+/* edit y eliminar */
+$routes->get('usuario/delete/(:num)', 'usuario_controller::delete/$1');
+$routes->get('usuario/edit/(:num)', 'usuario_controller::edit/$1');
+$routes->post('usuario/update/(:num)', 'usuario_controller::update/$1');
+
+/*nuevo usuario */
+$routes->get('/usuario/new', 'usuario_controller::newUser');
+$routes->post('/usuario_controller/saveNewUser', 'usuario_controller::saveNewUser');
+
+
 
 
 
